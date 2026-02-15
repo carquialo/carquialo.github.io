@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carlos Quiñones Alonso | Red Team</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#0b0f14;
+    --card:#111827;
+    --accent:#00ff88;
+    --accent-soft:#00ff8844;
+    --text:#d1d5db;
+    --sub:#6b7280;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+/* GRID BACKGROUND */
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    linear-gradient(var(--accent-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--accent-soft) 1px, transparent 1px);
+    background-size:40px 40px;
+    z-index:-1;
+    animation: gridMove 18s linear infinite;
+}
+
+@keyframes gridMove{
+    from{background-position:0 0;}
+    to{background-position:40px 40px;}
+}
+
+h1,h2,h3{
+    font-family:'Share Tech Mono',monospace;
+    color:var(--accent);
+}
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(11,15,20,0.95);
+    padding:15px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #1f2937;
+}
+
+nav a{
+    color:var(--text);
+    text-decoration:none;
+    margin-left:20px;
+    font-size:0.9rem;
+}
+
+nav a:hover{
+    color:var(--accent);
+}
+
+header{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 10% 50px;
+    gap:60px;
+    flex-wrap:wrap;
+}
+
+.profile img{
+    width:260px;
+    border-radius:12px;
+    border:2px solid var(--accent);
+    filter:grayscale(100%);
+    transition:0.4s;
+}
+
+.profile img:hover{
+    filter:grayscale(0%);
+    transform:scale(1.04);
+}
+
+.hero-text{
+    max-width:600px;
+}
+
+.subtitle{
+    color:var(--sub);
+    margin-top:10px;
+}
+
+.terminal{
+    background:#000;
+    color:var(--accent);
+    font-family:'Share Tech Mono';
+    padding:20px;
+    border-radius:8px;
+    margin-top:25px;
+    box-shadow:0 0 25px var(--accent-soft);
+    font-size:0.9rem;
+}
+
+section{
+    padding:90px 10%;
+}
+
+.card{
+    background:var(--card);
+    padding:30px;
+    border-radius:10px;
+    margin-top:30px;
+    border:1px solid #1f2937;
+    transition:0.3s;
+}
+
+.card:hover{
+    border-color:var(--accent);
+    transform:translateY(-4px);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.badge{
+    display:inline-block;
+    padding:6px 12px;
+    border:1px solid var(--accent);
+    color:var(--accent);
+    font-family:'Share Tech Mono';
+    font-size:0.8rem;
+    margin:5px 5px 0 0;
+}
+
+a{
+    color:var(--accent);
+    text-decoration:none;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    border-top:1px solid #1f2937;
+    color:var(--sub);
+}
+
+/* Typing animation */
+.typing{
+    border-right:2px solid var(--accent);
+    white-space:nowrap;
+    overflow:hidden;
+    margin-top:15px;
+    font-family:'Share Tech Mono';
+    color:var(--accent);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h3>redteam@carquialo</h3>
+    <div>
+        <a href="#sobre">Sobre mí</a>
+        <a href="#especializacion">Especialización</a>
+        <a href="#skills">Skills</a>
+        <a href="#contacto">Contacto</a>
+    </div>
+</nav>
+
+<header>
+    <div class="profile">
+        <img src="assets/profile.jpg" alt="Carlos Quiñones Alonso">
+    </div>
+
+    <div class="hero-text">
+        <h1>CARLOS QUIÑONES ALONSO</h1>
+        <div class="typing" id="typing"></div>
+
+        <div class="terminal">
+root@redteam:~$ whoami  
+Estudiante ASIR  
+Especialización: Red Team  
+Objetivo: Offensive Security Professional  
+Estado: En constante evolución...
+        </div>
+    </div>
+</header>
+
+<section id="sobre">
+<h2>Sobre mí</h2>
+<div class="card">
+Actualmente estoy cursando ASIR (Administración de Sistemas Informáticos en Red), donde estoy consolidando una base sólida en sistemas, redes y administración de infraestructuras.
+
+Mi enfoque profesional está orientado hacia la ciberseguridad ofensiva. Me estoy especializando en Red Team, desarrollando competencias en enumeración, explotación controlada de vulnerabilidades y análisis técnico profundo de sistemas.
+
+Mi objetivo a futuro es continuar especializándome en seguridad ofensiva, obteniendo certificaciones reconocidas y evolucionando hacia un perfil técnico altamente cualificado en entornos reales de seguridad.
+</div>
+</section>
+
+<section id="especializacion">
+<h2>Especialización Actual</h2>
+<div class="card">
+<span class="badge">Pentesting Web</span>
+<span class="badge">Active Directory Attacks</span>
+<span class="badge">Enumeración Avanzada</span>
+<span class="badge">Escalada de Privilegios</span>
+<span class="badge">Linux & Windows Exploitation</span>
+<span class="badge">Análisis de Superficie de Ataque</span>
+</div>
+</section>
+
+<section id="skills">
+<h2>Stack Técnico</h2>
+<div class="grid">
+<div class="card">
+<h3>Sistemas</h3>
+Linux<br>Windows Server<br>Active Directory<br>Virtualización
+</div>
+<div class="card">
+<h3>Redes</h3>
+TCP/IP<br>DNS<br>Firewalls<br>Análisis de tráfico
+</div>
+<div class="card">
+<h3>Herramientas</h3>
+Nmap<br>Burp Suite<br>Metasploit<br>Wireshark<br>Hydra<br>Gobuster
+</div>
+</div>
+</section>
+
+<section id="contacto">
+<h2>Contacto</h2>
+<div class="card">
+LinkedIn:  
+<a href="https://www.linkedin.com/in/carlos-quiñones-alonso" target="_blank">
+linkedin.com/in/carlos-quiñones-alonso
+</a>
+<br><br>
+GitHub:  
+<a href="https://github.com/carquialo" target="_blank">
+github.com/carquialo
+</a>
+</div>
+</section>
+
+<footer>
+© 2026 Carlos Quiñones Alonso | Offensive Security
+</footer>
+
+<script>
+const text = "Red Team | Offensive Security | ASIR Student";
+let i = 0;
+function typing(){
+    if(i < text.length){
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing, 45);
+    }
+}
+typing();
+</script>
+
+</body>
+</html>
